@@ -1,4 +1,4 @@
-# Selenium Automation Framework ( With Java)
+# Selenium Automation Framework (With Java)
 
 # Author - Gaurav
 
