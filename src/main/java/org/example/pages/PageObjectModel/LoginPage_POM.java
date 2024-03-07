@@ -15,6 +15,7 @@ public class LoginPage_POM extends CommonToAllPage {
     By username = By.id("login-username");
     By password = By.id("login-password");
     By signButton = By.id("js-login-btn");
+    By error_message = By.id("js-notification-box-msg"); // this is for negative test case
 
 
     public LoginPage_POM loginToVWOPositive() throws Exception {    // here by PropertyReader class we are reading username and pass
@@ -35,12 +36,15 @@ public class LoginPage_POM extends CommonToAllPage {
 
     }
 
-    public void loginToVWONegative() throws Exception {    // here by PropertyReader class we are reading username and pass
+    public String loginToVWONegative() throws Exception {    // here by PropertyReader class we are reading username and pass
         //exception is suggested as may this file is empty of not found in future
 
-        enterInput(username, PropertyReader.readKey("username"));
+        enterInput(username,"admin"); // hardcoded wrong value
         enterInput(password, PropertyReader.readKey("password"));
         clickElement(signButton);
+        visibilityOfElement(error_message);
+        return  getElement(error_message).getText();
+
 
     }
 

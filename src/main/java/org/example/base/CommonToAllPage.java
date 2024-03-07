@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-//Common functions i.e
+//Common functions i.e.
 //waits
 //WebDriver
 // This page is common to all pages so that we can reuse
@@ -34,6 +34,13 @@ public void clickElement(By by){    // will be used for click
     public WebElement presenceOfElement(final By elementLocation) {
         return new WebDriverWait(DriverManagerTL.getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated(elementLocation));
     }
+
+
+    public WebElement visibilityOfElement(final By elementLocation) {
+        return new WebDriverWait(DriverManagerTL.getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(elementLocation));
+    }
+
+
 
     protected void enterInput(By by, String key) {
 
@@ -60,7 +67,7 @@ public void clickElement(By by){    // will be used for click
             wait.until(ExpectedConditions.visibilityOfAllElements(loc));
             wait.until(ExpectedConditions.urlContains(url));
         } catch (Exception e) {
-            System.out.println("Failed to wait");;
+            System.out.println("Failed to wait");
         }
 
 

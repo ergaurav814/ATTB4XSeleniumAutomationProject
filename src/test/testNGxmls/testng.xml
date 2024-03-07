@@ -8,6 +8,8 @@
 
                    <methods>
                        <include name="testLoginPositive"/>
+                       <include name="testLoginNegative"/>
+
 
                    </methods>
 
