@@ -10,7 +10,6 @@
                        <include name="testLoginPositive"/>
                        <include name="testLoginNegative"/>
 
-
                    </methods>
 
                </class>
