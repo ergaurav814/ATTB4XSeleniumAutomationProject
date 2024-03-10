@@ -45,12 +45,11 @@ public class DriverManagerTL {
 
     public static void init() throws MalformedURLException {
         if (Objects.isNull(DriverManagerTL.getDriver())){
-            EdgeOptions options = new EdgeOptions();
+            ChromeOptions options = new ChromeOptions();
             options.addArguments("--guest");
             options.addArguments("--remote-allow-origins=*");
             options.addArguments("--ignore-certificate-errors");
-            System.setProperty("webdriver.edge.driver", "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedgedriver.exe");
-            WebDriver driver = new EdgeDriver(options);
+            WebDriver driver = new ChromeDriver(options);
             setDriver(driver);
 
         }
