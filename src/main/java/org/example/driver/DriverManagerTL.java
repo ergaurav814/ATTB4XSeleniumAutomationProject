@@ -48,8 +48,8 @@ public class DriverManagerTL {
             EdgeOptions options = new EdgeOptions();
             options.addArguments("--guest");
             options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--ignore-certificate-errors");
             System.setProperty("webdriver.edge.driver", "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedgedriver.exe");
-
             WebDriver driver = new EdgeDriver(options);
             setDriver(driver);
 
